@@ -1,0 +1,10 @@
+set OUTPUT to {}
+tell application "Google Chrome"
+    repeat with w in windows
+        repeat with t in tabs of w
+            set end of OUTPUT to name of t
+        end repeat
+    end repeat
+end tell
+set text item delimiters to "\n"
+OUTPUT as text
